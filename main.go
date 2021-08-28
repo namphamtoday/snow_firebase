@@ -32,7 +32,6 @@ func InitFireBase() {
 	// authen.GetUserByEmail("phamhoangnam2608@gmail.com")
 	// CreateCustomToken()
 	// VerifyToken()
-
 	RevokeRefreshToken()
 }
 
