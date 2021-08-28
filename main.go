@@ -2,8 +2,10 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/joho/godotenv"
+	"github.com/namphamtoday/snow_firebase/connect"
 )
 
 func main() {
@@ -11,5 +13,12 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error loading .env file")
 	}
-	ConnectFireBase()
+	InitFireBase()
+}
+
+func InitFireBase() {
+	filePath := os.Getenv("FIREBASE_CREDENTIAL_FILE_PATH")
+	connect.ConnectFireBase(filePath)
+	connect.InitAuthen()
+	connect.InitFireStore()
 }
